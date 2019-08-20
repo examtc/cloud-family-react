@@ -1,0 +1,117 @@
+import styled from 'styled-components'
+
+const StyleDynamic =styled.div`
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+.shadow{
+    height:100%;
+    width:100%;
+    z-index:4;
+    background:#E0E1E1;
+    opacity:0.4;
+    position:absolute;
+    left:0;
+    top:0;
+}
+header{
+    display:flex;
+    align-items:center;
+    padding:0 0.17rem;
+    justify-content:space-between;
+    background:#5FB9C4;
+    height:0.44rem;
+    >img{
+        height:0.2rem;
+        width:0.12rem;
+    }
+    span{
+        color:white;
+        font-size:0.18rem;
+    }
+    label{
+        font-size:0.15rem;
+        color:#fff;
+    }
+}
+main{
+    background:#fff;
+    height:100%;
+    width:100%;
+    flex:1;
+    position:relative;
+    >div{
+        height:2.2rem;
+        padding:0 0.17rem;
+        margin-top:0.55rem;
+        position:relative;
+        form{
+            width:100%;
+            background:red;
+            height:100%;
+            textarea{
+                background:${props=>props.mainBackground};
+                ::placeholder{
+                    color:#c6c6c6;
+                    font-size:0.15rem;
+                }
+                font-size:0.15rem;
+                border:0;
+                outline:none;
+                height:100%;
+                width:100%
+            }
+        }
+        .addMsg{
+            position:absolute;
+            left:0.17rem;
+            bottom:0;
+            border:1px dotted #808080;
+            height:0.6rem;
+            width:0.6rem;
+            border-radius:0.05rem;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            img{
+                height:0.33rem;
+                width:0.33rem;
+            }
+        }
+    }
+    footer{
+        animation-duration:0.3s;
+        z-index:10;
+        position:absolute;
+        bottom:0;
+        left:0;
+        width:100%;
+        height:2.6rem;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        >div{
+            display:flex;
+            flex-direction:column;
+            span:nth-child(1),span:nth-child(2),span:nth-child(3){
+                border-bottom:1px solid #c6c6c6;
+            }
+        }
+        span{
+                display:inline-block;
+                height:0.5rem;
+                text-align:center;
+                line-height:0.5rem;
+                background:#fff;
+                font-size:0.12rem;
+                color:#000;
+            }
+    }
+}
+
+`
+
+export {
+    StyleDynamic
+}

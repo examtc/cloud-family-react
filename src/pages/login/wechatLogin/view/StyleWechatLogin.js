@@ -1,0 +1,106 @@
+import styled from 'styled-components'
+
+const StyleWechatLogin= styled.div`
+height:100%;
+width:100%;
+position:relative;
+overflow:hidden;
+>a{
+    display:inline-block;
+    position:absolute;
+    left:0.16rem;
+    top:0.38rem;
+    color:#303030;
+    font-size:0.15rem;
+}
+main{
+    margin-top:0.95rem;
+    padding:0 0.46rem 0 0.49rem;
+    h2{
+        font-size:0.26rem;
+        color:#303030;
+        font-weight:normal;
+        line-height:1;
+    }
+    >div{
+        width:100%;
+        margin-top:0.54rem;
+        background:#fff;
+        .title{
+            display:flex;
+            align-items:center;
+            font-size:0.15rem;
+            color:#303030;
+            img{
+                margin-right:0.07rem;
+                height:0.16rem;
+                width:0.16rem;
+            }
+        }
+        .info{
+            font-size:0.18rem;
+            color:#303030;
+            margin-top:0.23rem;
+        }
+        >div{
+            margin-top:0.3rem;
+            display:flex;
+            align-items:center;
+            >span{
+                height:0.5rem;
+                width:0.5rem;
+                border-radius:0.04rem;
+                overflow:hidden;
+                img{
+                    height:100%;
+                    width:100%;
+                }
+            }
+            aside{
+                display:flex;
+                height:0.55rem;
+                flex-direction:column;
+                justify-content:space-between;
+                font-size:0.15rem;
+                margin-left:0.1rem;
+                label{
+                    color:#303030;
+                }
+                i{
+                    color:#6c6c6c;
+                }
+            }
+        }
+    }
+    .btn{
+            display:flex;
+            margin-top:1.2rem;
+            width:100%;
+            flex-direction:column;
+            align-items:center;
+            span{
+                display:inline-block;
+                width:1rem;
+                height:0.27rem;
+                border-radius:0.04rem;
+                font-size:0.15rem;
+                text-align:center;
+                line-height:0.27rem;
+            }
+            .agreeBtn{
+                background:#74d4e0;
+                color:#fefefe;
+                margin-bottom:0.2rem;
+            }
+            .rejectBtn{
+                background:#f7f7f7;
+                color:#74d4e0;
+            }
+
+    }
+}
+`
+
+export{
+    StyleWechatLogin
+}

@@ -1,0 +1,141 @@
+import styled from 'styled-components'
+
+const StyledArea = styled.div`
+position: relative;
+height:100%;
+width:100%;
+.header{
+    z-index:10;
+    width:100%;
+    height:0.45rem;
+    position:absolute;
+    top:0;
+    left:0;
+    .hideMenu{
+        z-index:10;
+        position:absolute;
+        top:0.55rem;
+        right:0.22rem;
+        height:1.2rem;
+        width:0.9rem;
+        background:#fff;
+        border-radius:0.03rem;
+        span{
+            position:absolute;
+            top:-0.05rem;
+            right:0.1rem;
+            height:0;
+            width:0;
+            display:inline-block;
+            border-bottom:0.05rem solid #fff;
+            border-left:0.05rem solid transparent;
+            border-right:0.05rem solid transparent;
+        }
+        ul{
+            height:100%;
+            width:100%;
+            display:flex;
+            flex-direction:column;
+            li{
+                flex:1;
+                display:flex;
+                align-items:center;
+                padding:0 0.1rem;
+                img{
+                    width:0.19rem;
+                    height:0.19rem;
+                    margin-right:0.1rem
+                }
+                label{
+                    font-size:0.1rem;
+                    color:#c6c6c6;
+                    font-size:0.15rem;
+                    margin-left:0.08rem;
+                }
+            }
+        }
+    }
+}
+.header2{
+    background:#74D4E0;
+    z-index:10;
+    width:100%;
+    height:0.45rem;
+    position:absolute;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    top:0;
+    left:0;
+    img{
+        position:absolute;
+        height:0.17rem;
+        width:0.1rem;
+        left:0.1rem;
+    }
+    span{
+        color:#fefefe;
+        font-size:0.18rem;
+    }
+}
+.bodys{
+    height:100%;
+    width:100%;
+    overflow:scroll;
+    .main{
+        z-index:9;
+        position:relative;
+        background:white;
+        width:100%;
+        >span{
+            display:inline-block;
+            height:4.03rem;
+            width:100%;
+            z-index:5;
+            img{
+                width:100%;
+                height:100%;
+            }
+        }
+    }
+}
+.comment{
+    z-index:11;
+    padding:0 0.3rem;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:0.3rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    >label{
+        display:inline-block;
+        height:100%;
+        width:0.75rem;
+        background:#5fb9c4;
+        border-radius:0.15rem;
+        margin-left:0.07rem;
+        text-align:center;
+        line-height:0.3rem;
+        color:#fff;
+        font-size:0.12rem;
+    }
+    input{
+        flex:1;
+        height:100%;
+        padding-left:0.1rem;
+        font-size:0.14rem;
+        color:#000;
+        border-radius:0.15rem;
+        background:#ebebeb;
+        border:0;
+        outline:none;
+    }
+}
+`
+
+export {
+    StyledArea
+}

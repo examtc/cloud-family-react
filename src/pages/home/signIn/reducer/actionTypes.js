@@ -1,0 +1,1 @@
+export const siginData = 'home/sigin'

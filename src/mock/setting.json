@@ -1,0 +1,15 @@
+{
+  "data": {
+    "username": "赵小宝",
+    "sex": "男",
+    "birthday": "2019-8-11",
+    "idCard": "140222199808070512",
+    "company": "北方...公司",
+    "department": "人力资源部",
+    "position": "职员",
+    "entryDate": "2019-8-10",
+    "positiveDates": "2019-8-08",
+    "phone": "13948926314",
+    "userImg": "./images/setting/head.png"
+  }
+}

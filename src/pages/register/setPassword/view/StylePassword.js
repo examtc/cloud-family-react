@@ -1,0 +1,98 @@
+import styled from 'styled-components'
+
+const StylePassword= styled.div`
+height:100%;
+position:relative;
+width:100%;
+overflow:hidden;
+.cancle{
+    width:auto;
+    font-size:0.15rem;
+    color:#303030;
+    line-height:0.22rem;
+    padding:0 0.16rem;
+    margin-top:0.38rem
+}
+main{
+    text-align:right;
+    margin-top:0.42rem;
+    padding:0 0.49rem;
+    h2{
+        text-align:left;
+        font-size:0.26rem;
+        color:#303030;
+        font-weight:normal;
+        line-height:1;
+    }
+    form{
+        width:100%;
+        margin-top:0.76rem;
+        div{
+            width:100%;
+            border-bottom:1px solid #f7f7f7;
+            display:flex;
+            justify-content:space-between;
+            padding-right:0.05rem;
+            align-items:center;
+            padding-bottom:0.15rem;
+            height:0.36rem;
+            input{
+                width:90%;
+                height:0.18rem;
+                font-size:0.15rem;
+                outline:none;
+                border:0;
+                ::placeholder{
+                    color:#c6c6c6;
+                    font-size:0.15rem;
+            }
+            }
+        }
+    }
+    p{
+        width:100%;
+        margin-top:0.08rem;
+        text-align:right;
+        display:flex;
+        align-items:center;
+        position:relative;
+        height:0.3rem;
+        justify-content:space-between;
+        img{
+            height:0.15rem;
+            width:0.15rem;
+            margin-left:0.07rem;
+        }
+        span{
+            position:absolute;
+            right:0;
+            display:flex;
+            align-items:center
+        }
+    }
+    >span{
+        margin-top:0.8rem;
+        display:inline-block;
+        height:0.5rem;
+        width:0.5rem;
+        border-radius:50%;
+        overflow:hidden;
+        img{
+            height:100%;
+            width:100%;
+        }
+    }
+}
+footer{
+    width:100%;
+    text-align:center;
+    position:absolute;
+    bottom:0.15rem;
+    color: #c6c6c6;
+    font-size:0.12rem;
+}
+`
+
+export{
+    StylePassword
+}

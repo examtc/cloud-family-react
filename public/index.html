@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Cloud+</title>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=e5FbMsk3D6nRyzXi5DEhbr9GKwSGM7En"></script>
+
+    
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root" style="width: 100%; height: 100%; background: #fff;"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script>
+      var voice={
+        localId:""
+      }
+      var images={
+        localId:""
+      }
+    fetch('/jsapi')
+      .then((response) => {
+        return response.json()
+      })
+      .then((result) => {
+        wx.config({
+          debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+          appId: result.appId, // 必填，公众号的唯一标识
+          timestamp: result.timestamp, // 必填，生成签名的时间戳
+          nonceStr: result.nonceStr, // 必填，生成签名的随机串
+          signature: result.signature,// 必填，签名
+          jsApiList: ["scanQRCode","translateVoice","getLocalImgData","onVoiceRecordEnd","onVoicePlayEnd","startRecord","stopRecord","playVoice","chooseImage","openLocation","getLocation"] // 必填，需要使用的JS接口列表
+        })
+
+        wx.ready(function(){
+            // 4 音频接口
+            // 4.2 开始录音
+            document.querySelector('#startRecord').onclick = function () {
+                wx.startRecord({
+                cancel: function () {
+                    alert('用户拒绝授权录音');
+                }
+                });
+            };
+            
+            // 4.3 停止录音
+            document.querySelector('#stopRecord').onclick = function () {
+                wx.stopRecord({
+                success: function (res) {
+                    voice.localId = res.localId;
+                },
+                fail: function (res) {
+                    alert(JSON.stringify(res));
+                }
+                });
+            };
+
+            // 4.4 监听录音自动停止
+            wx.onVoiceRecordEnd({
+                complete: function (res) {
+                voice.localId = res.localId;
+                alert('录音时间已超过一分钟');
+                }
+            });
+
+            // 4.5 播放音频
+            document.querySelector('#playVoice').onclick = function () {
+                if (voice.localId == '') {
+                alert('请先使用 startRecord 接口录制一段声音');
+                return;
+                }
+                wx.playVoice({
+                localId: voice.localId
+                });
+            };
+          document.getElementById('scan').addEventListener('click', () => {
+            wx.scanQRCode({
+              needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+              scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+              success: function (res) {
+                var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+                document.querySelector('#text').innerHTML = result
+              }
+            })
+          })
+        // 4 音频接口
+        // 4.2 开始录音
+        document.querySelector('#startRecord').onclick = function () {
+            wx.startRecord({
+            cancel: function () {
+                alert('用户拒绝授权录音');
+            }
+            });
+        };
+
+        // 4.3 停止录音
+        document.querySelector('#stopRecord').onclick = function () {
+            wx.stopRecord({
+            success: function (res) {
+                voice.localId = res.localId;
+            },
+            fail: function (res) {
+                alert(JSON.stringify(res));
+            }
+            });
+        };
+
+        // 4.4 监听录音自动停止
+        wx.onVoiceRecordEnd({
+            complete: function (res) {
+            voice.localId = res.localId;
+            alert('录音时间已超过一分钟');
+            }
+        });
+
+        // 4.5 播放音频
+        document.querySelector('#playVoice').onclick = function () {
+            if (voice.localId == '') {
+            alert('请先使用 startRecord 接口录制一段声音');
+            return;
+            }
+            wx.playVoice({
+            localId: voice.localId
+            });
+        };
+        
+
+          document.getElementById('transVoice').addEventListener('click', () => {
+            wx.translateVoice({
+                localId: voice.localId, // 需要识别的音频的本地Id，由录音相关接口获得
+                isShowProgressTips: 1, // 默认为1，显示进度提示
+                success: function (res) {
+                alert(res.translateResult); // 语音识别的结果
+                }
+                });
+          })
+          document.getElementById('take').addEventListener('click', () => {
+            wx.chooseImage({
+                success: function (res) {
+                    images.localId = res.localIds;
+                    alert('已选择 ' + res.localIds.length + ' 张图片');
+                }
+            });
+          })
+          document.getElementById('photo').addEventListener('click', () => {
+            wx.getLocalImgData({
+                localId: images.localId, // 图片的localID
+                success: function (res) {
+                var localData = res.localData; // localData是图片的base64数据，可以用img标签显示
+                alert(localData)
+            }
+            });
+          })
+          document.getElementById('ditu').addEventListener('click', () => {
+            wx.openLocation({
+                latitude: 0, // 纬度，浮点数，范围为90 ~ -90
+                longitude: 0, // 经度，浮点数，范围为180 ~ -180。
+                name: '', // 位置名
+                address: '', // 地址详情说明
+                scale: 1, // 地图缩放级别,整形值,范围从1~28。默认为最大
+                infoUrl: '' // 在查看位置界面底部显示的超链接,可点击跳转
+                });
+          })
+          document.getElementById('loc').addEventListener('click', () => {
+         wx.getLocation({
+        type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+        success: function (res) {
+            var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+            var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+            var speed = res.speed; // 速度，以米/每秒计
+            var accuracy = res.accuracy; // 位置精度
+            var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+               
+                console.log(res)
+                fetch(`api/reverse_geocoding/v3/?ak=wRKhoixq4i6wAXGN2A0fx74bmyfGGV0p&output=json&coordtype=wgs84ll&location=${latitude},${longitude}`)
+                .then((response) => {
+                    return response.json()
+                })
+                .then((result) => {
+                    console.log(result)
+                     document.querySelector('#locare').innerHTML = JSON.stringify(result.result.formatted_address)
+                }
+                )
+        }
+            });
+          })
+        })
+      })
+
+
+       
+  </script>
+  </body>
+</html>

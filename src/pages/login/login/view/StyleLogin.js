@@ -1,0 +1,123 @@
+import styled from 'styled-components'
+
+const StyleLogin = styled.div`
+height:100%;
+width:100%;
+position:relative;
+overflow:hidden;
+>a{
+    display:inline-block;
+    text-align:center;
+    position:absolute;
+    border:0;
+    outline:none;
+    border:1px solid #74d4e0;
+    border-radius:0.16rem;
+    background:#fff;
+    height:0.33rem;
+    width:0.64rem;
+    right:0.16rem;
+    top:0.25rem;
+    color:#74d4e0;
+    font-size:0.18rem;
+    z-index:10;
+    line-height:0.33rem;
+}
+.shadow{
+    height:100%;
+    width:100%;
+    z-index:40;
+    background:#E0E1E1;
+    opacity:0.4;
+    position:absolute;
+    left:0;
+    top:0;
+}
+main{
+    margin-top:0.95rem;
+    padding:0 0.46rem 0 0.49rem;
+    h2{
+        font-size:0.26rem;
+        color:#303030;
+        font-weight:normal;
+        line-height:1;
+    }
+    >div{
+        width:100%;
+        position:relative;
+        margin-top:0.52rem;
+        input{
+            outline:none;
+            border:0;
+            ::placeholder{
+                color:#c6c6c6;
+                font-size:0.15rem;
+            }
+        }
+        .phone{
+            width:100%;
+            border-bottom:1px solid #f7f7f7;
+            display:flex;
+            align-items:center;
+            padding-bottom:0.15rem;
+            margin-bottom:0.15rem;
+            span{
+                display:inline-block;
+                height:0.18rem;
+                width:0.38rem;
+                background:#F0FAFB;
+                border-radius:0.04rem;
+                line-height:0.18rem;
+                text-align:center;
+                font-size:0.15rem;
+                color:#c6c6c6;
+            }
+            input{
+                width:80%;
+                height:0.18rem;
+                padding-left:0.1rem;
+            }
+        }
+        .password{
+            width:100%;
+            border-bottom:1px solid #f7f7f7;
+            display:flex;
+            justify-content:space-between;
+            padding-right:0.05rem;
+            align-items:center;
+            padding-bottom:0.15rem;
+            height:0.36rem;
+        }
+        p{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            width:100%;
+            color:#303030;
+            font-size:0.15rem;
+            margin-top:0.2rem;
+            a{
+                color:#303030;
+            }
+        }
+        .submit{
+            display:inline-block;
+            height:0.5rem;
+            width:0.5rem;
+            position:absolute;
+            right:0;
+            margin-top:0.4rem;
+            border-radius:50%;
+            overflow:hidden;
+            img{
+                height:100%;
+                width:100%;
+            }
+        }
+    }
+}
+`
+
+export{
+    StyleLogin
+}

@@ -1,0 +1,110 @@
+{
+  "businessTrip": [
+    {
+      "id": 1,
+      "uuid": "1001",
+      "worPlace": "北京",
+      "worBgindate": "12131341234",
+      "worEnddate": "123142341",
+      "worContext": "世界这么大我想去看看",
+      "auditman": [
+        "1",
+        "2",
+        "3"
+      ],
+      "lookman": [
+        "相高强"
+      ]
+    },
+    {
+      "uuid": "1001",
+      "worPlace": "北京",
+      "worBgindate": "12131341234",
+      "worEnddate": "123142341",
+      "worContext": "世界这么大我想去看看",
+      "auditman": [
+        "1",
+        "2",
+        "3"
+      ],
+      "lookman": [
+        "相高强"
+      ],
+      "id": 2
+    },
+    {
+      "uuid": "1001",
+      "worPlace": "南京",
+      "worBgindate": "2019-08-08T12:58:35.729Z",
+      "worEnddate": "2019-08-11T12:58:39.502Z",
+      "worContext": "世界这么大我想去看看",
+      "auditman": [
+        "1",
+        "2",
+        "3"
+      ],
+      "lookman": [
+        "相高强"
+      ],
+      "id": 3
+    },
+    {
+      "uuid": "1001",
+      "worPlace": "南京",
+      "worBgindate": "2019-08-06T12:59:33.680Z",
+      "worEnddate": "2019-08-09T12:59:36.005Z",
+      "worContext": "来大姨妈了",
+      "auditman": [
+        "1",
+        "2",
+        "3"
+      ],
+      "lookman": [
+        "相高强"
+      ],
+      "id": 4
+    },
+    {
+      "uuid": "1001",
+      "worPlace": "123",
+      "worBgindate": 1565096461279,
+      "worEnddate": 1565528463231,
+      "worContext": "123123",
+      "auditman": [
+        "1",
+        "2",
+        "3"
+      ],
+      "lookman": [
+        "相高强"
+      ],
+      "id": 5
+    },
+    {
+      "uuid": "1001",
+      "worPlace": "",
+      "worBgindate": null,
+      "worEnddate": null,
+      "worContext": "",
+      "auditman": [
+        "1",
+        "2",
+        "3"
+      ],
+      "lookman": [
+        "相高强"
+      ],
+      "id": 6
+    },
+    {
+      "uuid": "1001",
+      "worPlace": "134123",
+      "worBgindate": 1565097024793,
+      "worEnddate": 1565449826248,
+      "worContext": "1231234",
+      "auditman": "",
+      "lookman": "相高强",
+      "id": 7
+    }
+  ]
+}

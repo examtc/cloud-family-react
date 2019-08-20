@@ -1,0 +1,127 @@
+import styled from 'styled-components'
+
+const StyleList = styled.div`
+padding-top:0.18rem;
+margin-top:-0.35rem;
+margin-bottom:-0.35rem;
+border-top-left-radius:0.3rem;
+border-top-right-radius:0.3rem;
+background:#fff;
+width:100%;
+z-index:10;
+position:relative;  
+.item{
+                padding-bottom:0.1rem;
+                padding:0 0.3rem;
+                margin-bottom:0.28rem;
+                .userInfo{
+                    display:flex;
+                    align-items:center;
+                    >span{
+                        display:inline-block;
+                        height:0.36rem;
+                        width:0.36rem;
+                        overflow:hidden;
+                        border-radius:50%;
+                        margin-right:0.13rem;
+                        img{
+                            height:100%;
+                            width:100%;
+                        }
+                    }
+                    label{
+                        color: #000;
+                        font-size:0.18rem;
+                    }
+                }
+                .content{
+                    background:#fff;
+                    padding-left:0.5rem;
+                    p{
+                        font-size:0.12rem;
+                        color:#303030;
+                        text-align:justify; 
+                        text-justify:inter-ideograph;
+                        line-height:0.19rem;
+                    }
+                    aside{
+                        margin-top:0.12rem;
+                        width:2.28rem;
+                        img{
+                            height:0.75rem;
+                            width:0.75rem;
+                            margin:0 0.01rem 0.01rem 0;
+                        }
+                    }
+                }
+                .prise{
+                    padding-left:0.5rem;
+                    width:100%;
+                    margin-top:0.2rem;
+                    display:flex;
+                    align-items:flex-start;
+                    position:relative;
+                    .priseAll{
+                        width:80%;
+                        display:flex;
+                        flex-wrap:wrap;
+                        span{
+                            margin-right:0.01rem;
+                            display:inline-block;
+                            height:0.18rem;
+                            width:0.18rem;
+                            border-radius:50%;
+                            overflow:hidden;
+                            align-items:center;
+                            img{
+                                height:120%;
+                                width:120%;
+                            }
+                        }
+                        label{
+                            height:0.18rem;
+                            width:0.18rem;
+                            display:inline-block;
+                            text-align:center;
+                            line-height:0.18rem;
+                        }
+                    }
+                    .priseBtn{
+                        width:20%;
+                        display:flex;
+                        justify-content:space-between;
+                        i{
+                            height:0.15rem;
+                            display:flex;
+                            align-items:flex-start;
+                            img{
+                                height:100%;
+                                width:0.15rem;
+                            }
+                        }
+                    }
+                }
+                .times{
+                    text-align:right;
+                    margin-top:0.05rem;
+                    color:rgb(146, 146, 146);
+                    font-size:0.12rem;
+                }
+                .pinglun{
+                    p{
+                        margin-top:0.05rem;
+                        font-size:0.12rem;
+                        label{
+                            color:skyblue;
+                        }
+                        span{
+                            color:#303030;
+                        }
+                    }
+                }
+            }
+`
+
+export {
+    StyleList
+}
